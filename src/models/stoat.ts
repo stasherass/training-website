@@ -8,7 +8,7 @@ interface IStoat {
     weight: number; // Вага горностаїви в штуких
     gender: 'male' | 'female'; // Стать горностаїви: 'male' - самець, 'female' - самка
     description?: string; // Опис горностаїви (необов'язкове поле)
-    teethNumber: string; // Кількість з'їденого листя евкаліпту за день, кг
+    teethNumber: string; // Кількість зубів
     dateAdded: Date; // Дата додавання запису до бази даних
 }
 

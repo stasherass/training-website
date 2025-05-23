@@ -197,11 +197,11 @@ export const swaggerSpec = {
                     },
                     height: {
                         type: 'number',
-                        description: 'Висота горностая в сантиметрах',
+                        description: 'Висота горностая в метрах',
                     },
                     weight: {
                         type: 'number',
-                        description: 'Вага горностая в штуких',
+                        description: 'Вага горностая в кілограмах',
                     },
                     gender: {
                         type: 'string',
@@ -214,7 +214,7 @@ export const swaggerSpec = {
                     },
                     teethNumber: {
                         type: 'string',
-                        description: 'Кількість зїдання  евкалипта в день',
+                        description: 'Кількість зубів',
                     },
                 },
             },
