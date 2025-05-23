@@ -4,9 +4,9 @@ export const swaggerSpec = {
     openapi: '3.0.0',
     // Загальна інформація про API
     info: {
-        title: 'API Сайту про Зайців',
+        title: 'API Сайту про Горностаїв',
         version: '1.0.0',
-        description: 'Документація API для Сайту про Зайців',
+        description: 'Документація API для Сайту про Горностаїв',
     },
     // Налаштування серверів для тестування API
     servers: [
@@ -18,20 +18,20 @@ export const swaggerSpec = {
             description: 'Development server',
         },
     ],
-    // Визначення кінцевих точок (endpoints) REST API та операцій з ними
+    // Визначення роутерів API та операцій з ними
     paths: {
-        '/api/rabbits': {
-            // GET запит для отримання всіх зайців
+        '/api/stoats': {
+            // GET запит для отримання всіх горностаїв
             get: {
-                summary: 'Отримати всіх зайців',
+                summary: 'Отримати всіх горностаїв',
                 responses: {
                     '200': {
-                        description: 'Список всіх зайців',
+                        description: 'Список всіх горностаїв',
                         content: {
                             'application/json': {
                                 schema: {
                                     type: 'array',
-                                    items: { $ref: '#/components/schemas/Rabbit' },
+                                    items: { $ref: '#/components/schemas/Stoat' },
                                 },
                             },
                         },
@@ -39,23 +39,23 @@ export const swaggerSpec = {
                 },
             },
 
-            // POST запит для створення нового зайця
+            // POST запит для створення нового горностая
             post: {
-                summary: 'Створити нового зайця',
+                summary: 'Створити нового горностая',
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Stoat' },
                         },
                     },
                 },
                 responses: {
                     '201': {
-                        description: "Створений об'єкт зайця",
+                        description: "Створений об'єкт горностая",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Stoat' },
                             },
                         },
                     },
@@ -63,112 +63,116 @@ export const swaggerSpec = {
             },
         },
 
-        // Операції для конкретного зайця за ID
-        '/api/rabbits/{id}': {
-            // GET запит для отримання зайця за ID
+        // Операції для конкретного горностая за ID
+        '/api/stoats/{id}': {
+            // GET запит для отримання горностая за ID
             get: {
-                summary: 'Отримати зайця за ID',
+                summary: 'Отримати горностая за ID',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID горностая',
+                        teethNumber: '',
                     },
                 ],
                 responses: {
                     '200': {
-                        description: "Об'єкт зайця",
+                        description: "Об'єкт горностая",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Stoat' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Горностая не знайдено' },
                 },
             },
 
-            // PUT запит для повного оновлення зайця за ID
+            // PUT запит для повного оновлення горностая за ID
             put: {
-                summary: 'Повністю оновити зайця',
+                summary: 'Повністю оновити горностая',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID горностая',
+                        teethNumber: '',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Stoat' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт горностая",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Stoat' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Горностая не знайдено' },
                 },
             },
-            // PATCH запит для часткового оновлення зайця за ID
+            // PATCH запит для часткового оновлення горностая за ID
             patch: {
-                summary: 'Частково оновити зайця',
+                summary: 'Частково оновити горностая',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID горностая',
+                        teethNumber: '',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Stoat' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт горностая",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Stoat' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Горностая не знайдено' },
                 },
             },
-            // DELETE запит для видалення даних про зайця за ID
+            // DELETE запит для видалення даних про горностая за ID
             delete: {
-                summary: 'Видалити дані про зайця',
+                summary: 'Видалити дані про горностая',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID горностая',
+                        teethNumber: '',
                     },
                 ],
                 responses: {
                     '200': { description: 'Повідомлення про успішне видалення' },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Горностая не знайдено' },
                 },
             },
         },
@@ -178,35 +182,39 @@ export const swaggerSpec = {
     components: {
         // Схеми даних
         schemas: {
-            // Схема об'єкта Заєць
-            Rabbit: {
+            // Схема об'єкта Горностай
+            Stoat: {
                 type: 'object',
                 required: ['name', 'age', 'height', 'weight', 'gender'],
                 properties: {
                     name: {
                         type: 'string',
-                        description: "Ім'я зайця",
+                        description: "Ім'я горностая",
                     },
                     age: {
                         type: 'number',
-                        description: 'Вік зайця у роках',
+                        description: 'Вік горностая у роках',
                     },
                     height: {
                         type: 'number',
-                        description: 'Висота зайця в сантиметрах',
+                        description: 'Висота горностая в сантиметрах',
                     },
                     weight: {
                         type: 'number',
-                        description: 'Вага зайця в кілограмах',
+                        description: 'Вага горностая в штуких',
                     },
                     gender: {
                         type: 'string',
                         enum: ['male', 'female'],
-                        description: 'Стать зайця',
+                        description: 'Стать горностая',
                     },
                     description: {
                         type: 'string',
-                        description: "Опис зайця (необов'язкове поле)",
+                        description: "Опис горностая (необов'язкове поле)",
+                    },
+                    teethNumber: {
+                        type: 'string',
+                        description: 'Кількість зїдання  евкалипта в день',
                     },
                 },
             },
