@@ -15,22 +15,22 @@ const PAGES = [
   },
   {
     path: '/morphology',
-    title: 'Зовнішній вигляд зайців',
+    title: 'Зовнішній вигляд горностаїв',
     component: Morphology
   },
   {
     path: '/nutrition',
-    title: 'Харчування зайців',
+    title: 'Харчування горностаїв',
     component: Nutrition
   },
   {
     path: '/population',
-    title: 'Ареал зайців',
+    title: 'Ареал горностаїв',
     component: Population
   },
   {
     path: '/photo',
-    title: 'Фотографії зайців',
+    title: 'Фотографії горностаїв',
     component: Photo
   }
 ];
